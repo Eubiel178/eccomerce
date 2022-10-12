@@ -1,4 +1,12 @@
+import NavBar from "../../components/Eccomerce/Navbar/Index";
+
 const Home = () => {
-  return <p>aa</p>;
+  return (
+    <section>
+      <header>
+        <NavBar />
+      </header>
+    </section>
+  );
 };
 export default Home;

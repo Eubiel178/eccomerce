@@ -7,6 +7,12 @@ import { Container } from "./Styles";
 import InputAndLabel from "../../../../components/Account/InputAndLabel/Index";
 import Button from "../../../../components/Account/Button/Index";
 
+//libs
+import Swal from "sweetalert2";
+
+//page uttils
+import { register } from "../../../../utils/user";
+
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -41,13 +47,8 @@ const Form = () => {
       if (response.code === "ERR_BAD_REQUEST") {
         await Swal.fire("Oops", "Ja existe uma conta com esse email!", "error");
 
-        setName("");
         setEmail("");
-        setPassword("");
-        setPassword2("");
       } else {
-        const router = History();
-
         Swal.fire(
           "Sua conta foi criada com sucesso!",
           "Bom Trabalho",
@@ -99,12 +100,7 @@ const Form = () => {
         value={password2}
       />
 
-      <Button
-        value="Criar Conta"
-        functionAction={() => {
-          handleRegister();
-        }}
-      />
+      <Button value="Criar Conta" functionAction={handleRegister} />
     </Container>
   );
 };
