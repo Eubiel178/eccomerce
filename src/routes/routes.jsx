@@ -8,7 +8,7 @@ import Contexts from "../contexts";
 //pages
 import Home from "../pages/Home/Index";
 import Login from "../pages/Login/Index";
-import Register from "../pages/Register";
+import Register from "../pages/Register/index";
 
 const AppRoutes = () => {
   const { auth } = useContext(Contexts);
